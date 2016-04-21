@@ -4,7 +4,9 @@
   "private": "true",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "restart": "./script/restart_nodejs_server"
+
   },
   "dependencies": {
     "bootstrap": "^3.3.6",

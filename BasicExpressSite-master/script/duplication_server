@@ -1,0 +1,7 @@
+#! /bin/bash
+
+script_path=$(pwd)
+project_name=$()
+
+
+cd ../..${script_path}

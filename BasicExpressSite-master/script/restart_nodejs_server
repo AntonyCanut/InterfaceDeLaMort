@@ -1,0 +1,15 @@
+#! /bin/bash
+
+
+script_path=$(pwd)
+
+echo "path is : ${script_path}"
+
+for i in $(lsof | grep "${script_path}" | grep "nodejs" | awk '{print $2}' | sort | uniq)
+	do
+		pkill $i
+		echo -e "Process $i was killed"
+	
+	done
+
+nohup npm start & 
