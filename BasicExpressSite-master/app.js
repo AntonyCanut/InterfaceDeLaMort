@@ -5,7 +5,7 @@ var express = require('express')
   , stylus = require('stylus')
   , nib = require('nib')
 
-var logger = require('logger');
+var logger = require('morgan');
 var routes = require('./routes/index');
 var about = require('./routes/about');
 
