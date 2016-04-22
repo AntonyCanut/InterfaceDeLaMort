@@ -8,6 +8,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next){
   var port = req.body.port;
+  console.log(port);
   res.redirect('localhost:' + port);
 });
 

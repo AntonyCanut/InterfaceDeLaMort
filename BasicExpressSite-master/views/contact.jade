@@ -3,7 +3,9 @@ extend layout
 block content
   p
     | Voici la page de contact
-    | Merci #{Name}, votre message à bien été transmis !
+    
+  p(class="#{IsHidden}")
+    | Merci #{FirstName} #{Name}, votre message à bien été transmis !
     
   form(method="post", action="/contact")
     p Nom : 
@@ -16,6 +18,3 @@ block content
       input(type="text", name="message").text
         
     button(type="submit").btn.success Envoyer
-
-//- iframe(id="receiver", src="http://demos.mattwest.io/post-message/receiver.html", width="500", height="200")
-//-   p Your browser does not support iframes

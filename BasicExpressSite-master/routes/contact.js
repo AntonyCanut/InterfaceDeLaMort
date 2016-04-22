@@ -13,14 +13,17 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('contact');
+  res.render('contact', {
+    IsHidden: "NoVisible"
+  });
 });
 router.post('/', function(req, res, next){
   res.render('contact', {
     Name: req.body.name,
     FirstName: req.body.firstName,
     Mail: req.body.mail,
-    Message: req.body.message
+    Message: req.body.message,
+    IsHidden: ""
   })
   // res.receiver.postMessage('Hello Treehouse!', 'http://demos.mattwest.io');
 });
