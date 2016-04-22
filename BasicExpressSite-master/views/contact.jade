@@ -2,4 +2,20 @@ extend layout
 
 block content
   p
-    | Nous sommes deux.
+    | Voici la page de contact
+    | Merci #{Name}, votre message à bien été transmis !
+    
+  form(method="post", action="/contact")
+    p Nom : 
+      input(type="text", name="name").text
+    p Prenom : 
+      input(type="text", name="firstName").text
+    p Mail : 
+      input(type="text", name="mail").text
+    p Message
+      input(type="text", name="message").text
+        
+    button(type="submit").btn.success Envoyer
+
+//- iframe(id="receiver", src="http://demos.mattwest.io/post-message/receiver.html", width="500", height="200")
+//-   p Your browser does not support iframes

@@ -8,6 +8,7 @@
     "restart": "./script/restart_nodejs_server"
   },
   "dependencies": {
+    "body-parser": "^1.15.0",
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
     "jade": "^1.7.0",
