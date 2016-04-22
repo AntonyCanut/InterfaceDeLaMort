@@ -24,7 +24,8 @@ cp -r ${project} ${project}${1}
 
 cd ${new_script_path}/${project}${1}
 
+sed -i  's/app.listen.*//' app.js
 
+echo "app.listen(${1});" >> app.js
 
-
-
+nohup npm start &
