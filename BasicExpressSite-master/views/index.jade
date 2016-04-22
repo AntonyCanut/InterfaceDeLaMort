@@ -6,10 +6,13 @@ block content
     | Bienvenue sur le nouveau site qui sert pas à grand chose
     | Si vous avez des questions, laissez tombé, ça ne sert à rien ! :)
 
-    button.btn(name="restart")#restart.btn-primary.btn-withmargintop Redemarrer le serveur
-    button.btn(name="clone")#clone.btn-primary.btn-withmargintop Clonner le serveur (numéro de port requit)
-    input.text(name="port")#port
-
+    form(method="post", action="/contact")
+      button.btn(name="restart")#restart.btn-primary.btn-withmargintop Redemarrer le serveur
+      
+    form(method="post", action="/contact")
+      input.text(name="port")#port
+      button.btn(name="clone")#clone.btn-primary.btn-withmargintop Clonner le serveur (numéro de port requit)
+      
     button#jesuisunid.btn.btn-primary.btn-withmargintop Redemarrer le serveur
     button.btn.btn-primary.btn-withmargintop Clonner le serveur
 

@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home' });
 });
 
+router.post('/', function(req, res, next){
+  var port = req.body.port;
+  res.redirect('localhost:' + port);
+});
+
 module.exports = router;
