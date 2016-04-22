@@ -1,7 +1,30 @@
 #! /bin/bash
 
+if [ -z $1 ] ; then 
+
+ echo "Error, no port has been sent to the script " && exit 1
+
+fi
+
+echo "New Port= $1"
+
 script_path=$(pwd)
-project_name=$()
+
+	cd ..
+
+project=${PWD##*/}
+
+	cd ..
+
+new_script_path=$(pwd)
+
+echo "Copiage de ${project} vers ${new_script_path}/${project}${1}"
+
+cp -r ${project} ${project}${1}
+
+cd ${new_script_path}/${project}${1}
 
 
-cd ../..${script_path}
+
+
+
