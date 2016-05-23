@@ -4,6 +4,7 @@
 var express = require('express')
   , stylus = require('stylus')
   , nib = require('nib')
+  , io = require('socket.io').listen(server)
 
 var logger = require('morgan');
 var bodyParser = require('body-parser')
@@ -12,6 +13,8 @@ var bodyParser = require('body-parser')
 var routes = require('./routes/index');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
+var chat = require('./routes/chat');
+var exec = require('child_process').exec;
 
 var app = express();
 
@@ -40,5 +43,6 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.use('/', routes);
 app.use('/about', about);
 app.use('/contact', contact);
+app.use('/chat', chat);
 
 app.listen(3000);

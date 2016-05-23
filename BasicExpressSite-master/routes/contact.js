@@ -1,13 +1,3 @@
-/*var express = require('express');
-var router = express.Router();
-
-router.get('/', function(req, res, next) {
-  res.render('About');
-});
-
-module.exports = router;
-*/
-
 var express = require('express');
 var router = express.Router();
 
@@ -18,6 +8,7 @@ router.get('/', function(req, res, next) {
   });
 });
 router.post('/', function(req, res, next){
+  console.log(req.body);
   res.render('contact', {
     Name: req.body.name,
     FirstName: req.body.firstName,
@@ -25,7 +16,6 @@ router.post('/', function(req, res, next){
     Message: req.body.message,
     IsHidden: ""
   })
-  // res.receiver.postMessage('Hello Treehouse!', 'http://demos.mattwest.io');
 });
 
 module.exports = router;

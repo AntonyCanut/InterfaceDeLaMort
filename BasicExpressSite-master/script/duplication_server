@@ -1,6 +1,6 @@
 #! /bin/bash
-
-if [ -z $1 ] ; then 
+set -x
+if [ -z $1 ] ; then
 
  echo "Error, no port has been sent to the script " && exit 1
 
@@ -20,12 +20,19 @@ new_script_path=$(pwd)
 
 echo "Copiage de ${project} vers ${new_script_path}/${project}${1}"
 
-cp -r ${project} ${project}${1}
+# cp -r ${project} ${project}${1}
+rsync -ra ${project} ${project}${1}
 
-cd ${new_script_path}/${project}${1}
+echo "Copie Terminé"
 
-sed -i  's/app.listen.*//' app.js
+cd ${new_script_path}/${project}${1}/InterfaceDeLaMort/BasicExpressSite-master
+
+echo "Déplacement vers le nouveau serveur"
+echo "Changement du port d'écoute"
+echo "je suis dans $(pwd)"
+ls
+sed -i '' 's/app.listen.*//' app.js
 
 echo "app.listen(${1});" >> app.js
 
-nohup npm start &
+node app.js

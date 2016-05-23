@@ -1,0 +1,15 @@
+extend layout
+//- link(rel='stylesheet', href='/bootstrap/dist/css/bootstrap.min.css')
+
+block content
+  p
+    | Communiquez avec vos pairs !
+  
+  form(action="/", method="post", id="formulaire_chat")
+    input(type="text", name="message", id="message", placeholder="Tapez ici votre message")
+    input(type="submit", id="envoi_message", value="envoyer")
+  
+  section#zone_chat
+  
+  script
+      include ./../public/js/chat.js
